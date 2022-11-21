@@ -1,0 +1,16 @@
+section.about{
+  background-image: url(/assets/img/img/codigo.jpg);
+  margin-top: 0rem;
+  z-index: 0;
+  height: auto;
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.sobre{
+  background-color: aliceblue; 
+}
+.nombre{
+  background-color: transparent;color: rgb(245, 252, 214);
+}

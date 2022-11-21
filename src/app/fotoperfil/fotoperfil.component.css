@@ -1,0 +1,12 @@
+/*fotoprfl*/
+.rounded-circle.w-25{
+  margin-top: -32rem;
+  width: 19rem !important;;
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  width: 100px;
+  height: auto;
+  margin-left: -38rem;
+  
+}

@@ -1,0 +1,293 @@
+<app-navbardashboard></app-navbardashboard>
+<section id="panel" class="panel">
+  <div class="container text-center">
+  <div class="row g-2 g-lg-3">
+    <div class="col">
+      <div > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="fa-solid fa-user fa-2xl">
+      </i></button>
+            </div>
+     
+    </div>
+    <div class="col">
+      <div  > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#estudiosModal"><i class="fa-solid fa-graduation-cap fa-2xl"></i></button></div>
+    </div>
+    
+    <div class="col">
+       <div  > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#apellidoynombre"><i class="fa-solid fa-plus fa-2xl"></i></button></div>
+      </div>
+     </div>
+  <!--2fila-->
+  <div class="row mt-2 g-2 g-lg-3">
+    <div class="col">
+      <div > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#fotoModal"><i class="fa-solid fa-image fa-2xl"></i></button></div>
+    </div>
+    <div class="col">
+      <div> <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#trabajomodal"><i class="fa-solid fa-briefcase fa-2xl"></i></button></div>
+    </div>
+    <div class="col">
+      <div > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#referencia"><i class="fa-solid fa-comment fa-2xl"></i></button></div>
+    </div>
+  </div>
+  <!--3fila-->
+  <div class="row mt-2 g-2 g-lg-3">
+    <div class="col">
+      <div > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#redessocialesModal"><i class="fa-solid fa-share-nodes fa-2xl"></i></button></div>
+    </div>
+    <div class="col">
+      <div > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#carpeta"><i class="fa-solid fa-folder fa-2xl"></i></button></div>
+    </div>
+    <div class="col">
+      <div  > <button type="button" class="btn btn-primary btn-lg p-5" data-bs-toggle="modal" data-bs-target="#avilidades"><i class="fa-solid fa-dumbbell fa-2xl"></i></button></div>
+    </div>
+  </div>
+</div>
+<!--modal-->
+<div class="modal fade" id="estudiosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">educacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Nombre Establesimiento</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" >  </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Titulo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" >
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="trabajomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">experiencia laboral</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="formFileSm" class="form-label">nombre de empresa</label>
+          <input class="form-control form-control-sm" id="formFileSm" type="text"><br>
+          <label for="formFileSm" class="form-label">periodo de trabajo desde</label>
+          <input type="date" id="start" name="trip-start"
+     value="2022-07-22"
+     min="1991-01-01" max="2023-12-31">
+     <label for="formFileSm" class="form-label">hasta</label>
+          <input type="date" id="start" name="trip-start"
+     value="2018-07-22"
+     min="1991-01-01" max="2022-12-31"> <hr>
+          <textarea class="form-control form-control-sm" id="formFileSm" type="texto" placeholder="descripcion del trabajo que realiza"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary">Guardar</button><hr>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">informacion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control-plaintext" id="staticEmail" value="ejemplo@email.com">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Iniciar Sesion</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="fotoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">baner</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="formFileSm" class="form-label">foto de usuario</label>
+          <input class="form-control form-control-sm" id="formFileSm" type="file">
+          <div class="col-sm-10">
+          </div>
+        </div>
+        <div class="mb-3 row">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="carpeta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">Proyectos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Nombre de proyecto</label>
+          <div class="col-sm-10">
+            <input type="text">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">proyecto</label>
+          <div class="col-sm-10">
+            <textarea class="form-control form-control-sm" id="formFileSm" type="texto" placeholder="proyecto"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Iniciar Sesion</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="referencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">referencia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label  class="col-sm-2 col-form-label">nombre de referente</label>
+          <div class="col-sm-10">
+            <input type="text">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <textarea class="form-control form-control-sm" id="formFileSm" type="texto" placeholder="carta de refernte"></textarea>
+          <div class="col-sm-10">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="redessocialesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">redes sociales</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+        </div>
+      </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Agregar Redes
+          </label>
+          <div class="col-sm-10">
+            <input type="texo">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="apellidoynombre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">Apellido y nombre</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Apellido</label>
+          <div class="col-sm-10">
+            <input type="text" >
+          <div class="col-sm-10">
+           
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" >
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">guardar</button>
+      </div>
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="avilidades" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModal">Avilidades</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Avilidad con:</label>
+          <div class="col-sm-10">
+            <input type="texo" >
+          <div class="col-sm-10">
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="text" class="col-sm-2 col-form-label">porcentaje</label>
+          <div class="col-sm-10">
+            <input type="number">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>

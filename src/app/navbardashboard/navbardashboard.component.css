@@ -1,0 +1,41 @@
+.navbar.navbar-expand-lg.bg-secondary{
+  background: rgb(9,242,78);
+background: -moz-linear-gradient(90deg, rgba(9,242,78,1) 0%, rgba(4,234,235,1) 50%, rgba(175,10,235,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(9,242,78,1) 0%, rgba(4,234,235,1) 50%, rgba(175,10,235,1) 100%);
+background: linear-gradient(90deg, rgba(9,242,78,1) 0%, rgba(4,234,235,1) 50%, rgba(175,10,235,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#09f24e",endColorstr="#af0aeb",GradientType=1);
+
+}
+i.fa-brands.fa-linkedin.fa-2xl,
+i.fa-brands.fa-instagram.fa-2xl,
+i.fa-brands.fa-twitter.fa-2xl,
+i.fa-solid.fa-user-lock.fa-2xl,
+i.fa-solid.fa-user.fa-2xl{
+
+  color:rgb(243, 249, 246);
+}
+/*logos*/
+i.fa-brands.fa-linkedin.fa-2xl:hover{
+  color:rgb(9, 25, 250);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.25);
+  
+}
+ i.fa-brands.fa-instagram.fa-2xl:hover{
+  color: rgb(236, 8, 11);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.25);
+} 
+i.fa-brands.fa-twitter.fa-2xl:hover{
+  color: rgb(54, 108, 243);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.25);
+}
+i.fa-solid.fa-user-lock.fa-2xl:hover{
+  color: rgb(5, 247, 138);
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.25);
+}
+i.fa-solid.fa-user.fa-2xl:hover{
+  color: rgb(12, 185, 238);
+}

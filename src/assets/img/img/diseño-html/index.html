@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--espesifica que documento se trata-->
+<html lang="en">
+  <!--referencia a idioma hingles condicional ej jpones "jp" mas idioma local español "es"local "es-mx"español mexico-->
+<head>
+  <!--estructura de la pagina que no se ve-->
+  <meta charset="UTF-8">
+  <!--caracter universal estandar-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--se adapta a los nabegadores hasta el explorer-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--zona vicible del navegador..codigo para que el contenido se adapte a las pantalla de los dispocitivo-->
+  <title>Chino html</title>
+  <!--titulo de la pagina entre 55 y 65 caracteres-->
+  <meta name="description" content="ej en esta pagina se aprende html">
+  <!--descripcion de la pagina resultado del buscador hasta 165crts-->
+  <style>
+    h2{
+      color: rgb(18, 249, 45);
+    }
+  </style>
+  <link rel="stylesheet" href="asset/estilo.css">
+</head>
+<body>
+  <!--parte del codigo donde se refleja en la pagina-->
+  <h1>Encabezado unico en la pagina con h1</h1>
+  <p>parrafo formato, para poner en <b>negrita</b> usamos "b".para <i>cursiva</i> usamos "i", para <u>subrrayado</u> usamos la "u", para suprimir <sup>2</sup> usamos "sup", para <mark>marcar texo</mark> usamos "mark", para  <small>letras mas pequeñas</small> usamos "SMALL"</p>
+<hr>
+<h2>segundo tema</h2>
+<p>para usar otro codigo para poner en <strong>negrita</strong> usamos "strong", para poner <em>enfasis</em> usamos "em", para un texto <blockquote>tabulado</blockquote> usamos "blockquote", y para realizar una <cite>cita</cite> se usa "cite".</p>
+<hr>
+<h2>formas de pre formateo de texo</h2>
+<p>
+  <pre>
+    Chino
+    romi
+    lisi
+    luci
+    roman
+  </pre>
+</p>
+<hr>
+<h2>para poner formas de codigos</h2>
+<p>
+  <pre>
+    <code>
+      program prenderLuz(apagado){
+        if(luz=apagado){
+          return prende
+        }
+        else apagar
+      }    
+    </code>
+  </pre>
+</p>
+<hr>
+<h2>estructura semantica</h2>
+<div>el div contiene estructura no semanticas</div>
+<p>la estructura esta formadas por cabesa de pagina web, estructura semantica eader , nav, section, article, aside, footer 
+<img src="estructura semantica.jpg" alt="estructura semantica">
+</p>
+<hr>
+<h2>estructura de pagina</h2>
+<p>main >solo puede exitir un main en un documento es la sexion principal del documento.
+  <br>footer> pie de pagina web.
+  <br>nav>reprecenta un citio de navegacion.
+  <br>article>reprecenta una seccion autocontenido por si sola se aplica.
+  <br>aside>contenido complementario o secundario.
+  <br>section>seccion de contenido generico.
+  <br>address>representa una direccion ficica o contacto. 
+  <hr>
+  <h2>etiqueta de bloque vs estiqueta de linea</h2>
+  <div style="background-color:yellow" >etiqueta de bloque por preferencia es la "div"</div>
+  <br><span style="background-color: rgb(108, 230, 102)">etiqueta de linea por exelencia es la "span"</span>
+  <br><p>una etiqueta de linea solo ocupa el espcio de su contenido, se puedde poner estilo a una estiqueta de html a traves de style ej div estyle </p>
+  </p>
+  <hr>
+  <h2>estilos css en html</h2>
+  <p>para pintar un bloque y pintar el texto de otro color la opcion que hay es
+</p>
+  <div style="background-color:rgb(225, 201, 15);color: aqua ;">div style bacckground-color red ;color yellow </div>
+  <br><h3>otra forma de estylo</h3>
+  <p>En la cabezera de la estructura html debajo de todo 
+    <br>style>
+<br>h2{
+  <br>color orange
+  <br>}
+<br>style>  </p>
+<hr><h2>enlasar css a html</h2>
+<p>para enlasar un archibo css hay que crear el codigo en la cabesera de la estructura html al final dentro del <b>head</b> el codigo se agrega con <u>link rel="stylesheet" href="ruta del archivo(este caso es:asset/estilo.css"> </u></p>
+<hr><h2>enlasamos en java</h2>
+<p>para enlasr javascreep:se crea la carpeta con el archivo <b>codigo.js</b> pero el enlase va en el cuerpo del la estructura html en la parte final con el codigo,<br> <b><i>script:src ="asset/codigo.js>/script"></i></b> </p>
+<hr><h2>agregar imagen</h2>
+<p>para agregar una imagen se usa el codigo <b>img src="la ruta de la imagen " alt="descripcion de la imagen"</b><br>
+para poner una imagen mas facil crear un archibo "IMAGEN PAR HTML" y cargar en ellas los distintos formatos JPG, GIF, PNG, SUG=LOGOS <br>para modificar el tamaño de la imagen cuando no hay muchos se puede modificar en html con <b><u>width:ancho, height:alto</u></b>. pero lo ideal es hacerlo desde css <b><br>img {<br>max_width:100 <br>height:auto; <br>{}</b> </p>
+<hr><h2>imagenes con figuras</h2>
+<p>cargar icono "css kons" por ej youtube el formato css.gg en las paginas "repo.com" 
+  /p>
+  <h3>figura</h3>
+  <p>agregar imag con figure ,que da info al pie de la imagen  
+    <pre>
+      ;figure;
+   ; img src="ruta" alt="tabl";
+ ;figcapation ;info de la imagen al pie ;figcaption; ;/figure;.;/figure;
+    </pre>
+  </p><hr>
+  <h2>listas</h2>
+  <p>esta forma enumera la lista desde 1</p>
+  <h3>lista ordenadas</h3>
+  <h4>estacion del año</h4>
+ <ol> <li>primavera</li>
+  <li>verano</li>
+  <li>otoño</li>
+  <li>invierno</li></ol><br>
+  <p>para una lista que quieras que empieze desde un numero especifico por ej desd el 3 
+    <ol start="3"> <li>primavera</li>
+      <li>verano</li>
+      <li>otoño</li>
+      <li>invierno</li></ol><br>
+      para empezar la lista alreves en (ol reverse)
+     <ol reversed><ol type="1"> <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li></ol></ol>
+  </p>
+<img src="" alt="">
+<script src="asset/codigo.js"></script>
+</body>
+</html>
