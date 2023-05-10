@@ -36,3 +36,14 @@ i.fa-solid.fa-user.fa-2xl:hover{
   --bs-list-group-bg: tranparent;
   --bs-list-group-border-color: tranparent;
   }
+  .form-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+  }
+  
+  .form-item {
+    margin: 2px;
+  }
+  

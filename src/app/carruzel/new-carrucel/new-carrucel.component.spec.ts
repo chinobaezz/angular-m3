@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PorcentajeComponent } from './porcentaje.component';
+import { NewCarrucelComponent } from './new-carrucel.component';
 
-describe('PorcentajeComponent', () => {
-  let component: PorcentajeComponent;
-  let fixture: ComponentFixture<PorcentajeComponent>;
+describe('NewCarrucelComponent', () => {
+  let component: NewCarrucelComponent;
+  let fixture: ComponentFixture<NewCarrucelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PorcentajeComponent ]
+      declarations: [ NewCarrucelComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PorcentajeComponent);
+    fixture = TestBed.createComponent(NewCarrucelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

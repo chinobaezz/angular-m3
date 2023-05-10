@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PortafolioService } from '../servicios/portafolio.service';
+import { Experiencia } from '../model/experiencia';
+import { ExperienciaService } from '../servicios/experiencia.service';
 
 
 @Component({
@@ -8,14 +9,20 @@ import { PortafolioService } from '../servicios/portafolio.service';
   styleUrls: ['./explaboral.component.css']
 })
 export class ExplaboralComponent implements OnInit {
+  explaboral:Experiencia[]=[];
   miData:any;
 
-  constructor(private datosPortafolio: PortafolioService) { }
-
+  constructor(private sExperiencia: ExperienciaService) { }
+  
   ngOnInit(): void {
-    this.datosPortafolio.getDatos().subscribe(data =>{
-    
-    this.miData = data;
-  });
-
-}}
+    this.cargarExperiencia();
+  }
+cargarExperiencia():void{
+  this.sExperiencia.list().subscribe(data=>{this.explaboral=data});
+}
+delete(id:number){
+  if(id!=undefined){
+    this.sExperiencia.delete(id).subscribe(data=>{this.cargarExperiencia();})
+  }
+}
+}

@@ -1,35 +1,49 @@
 <!--educacion-->
-<section id="sobre-mi " class="educacion" >
+
+<section id="sobre-mi " class="educacion">
   <div class="container text-center">
-     <div class="row">
-        <div class="col-3"> 
-          <h3 class="mt">Educacion</h3>
-        </div>
-        <div class="col-6 mt-4 ">
-         
-          <div class="accordion" id="accordionExample"*ngFor="let educacion of educaciones">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  {{educacion.nivel}}
+    <div class="row">
+      <h3 class="mt">Educacion</h3>
+    </div>
+    <button type="button" class="btn btn-light" routerLink="/newEduca">
+      Nueva educacion</button>
+    <div class="col-3">
+
+      <div class="col-9 mt-6" *ngFor="let educacion of educaciones">
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                {{educacion.titulo}}
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                {{educacion.inicio}} <br> {{educacion.fin}}
+                <td><button class="btn btn-light" routerLink="/editEduca"><i class="bi bi-pencil-fill"></i>
+                    Editar</button></td>
+                <button   class="btn btn-danger" (click)="delete(educacion.id)">
+                  <i class="bi bi-brush">borrar</i>
                 </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  {{educacion.inicio}} <br> {{educacion.fin}}
-                 
-                </div>
               </div>
             </div>
+
           </div>
-          
-
 
         </div>
-        <div class="col-3">
-           <br> 
-           <h3><em> < Baez <br>Albino ></em></h3>
-        </div>
-     </div>
+
+
+
+      </div>
+      <div class="col-3">
+        <br>
+        <h3><em>
+            < Baez <br>Albino >
+          </em></h3>
+      </div>
+    </div>
   </div>
 </section>

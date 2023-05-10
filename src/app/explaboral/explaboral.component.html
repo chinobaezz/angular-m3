@@ -1,25 +1,32 @@
- <!--trabajo-->
+
+<!--trabajo-->
  <section id="sobre-mi " class="trabajo">
   <div class="container text-fluit">
-     <div class="row">
+     <div class="row" >
         <div class="col-3 ">
            <br> 
            <h3 ><em> Baez <br>ALBINO ></em></h3> <br><br>
+           <div *ngFor="let experiencia of explaboral">
+           <img src={{experiencia.imagen}} alt="" height="10%" width="50%"> <br><br></div>
            
-            <img src="/assets/img/img/logo_seraris.jpg" alt="" height="10%" width="50%"> <br><br>
+            <!--<img src="/assets/img/img/logo_seraris.jpg" alt="" height="10%" width="50%"> <br><br>
            <img src="/assets/img/img/polimont.jpg" alt="" height="15%"> <br>
            <img src="/assets/img/img/clines-logotipo.png" alt="cli"> <br><br><br>
-           <i  class="fa-brands fa-dailymotion fa-2xl text-fluit"></i> <br> 
+           <i  class="fa-brands fa-dailymotion fa-2xl text-fluit"></i> <br> -->
          </div>
            <br><br>
           
         <div class="col-3  p-5 ">
            <h3 class="">Experirncia laboral</h3>
            <ul>
-             <li>Seraris: chofer profecional <br>2020-actualidad</li> <hr>
+            <li *ngFor="let experiencia of explaboral"> 
+              {{experiencia.nombreEmpresa}}:{{experiencia.puesto}} <br>
+              {{experiencia.inicio}}-{{experiencia.fin}}</li> <hr>
+
+            <!-- <li>Seraris: chofer profecional <br>2020-actualidad</li> <hr>
              <li>Polimont: chofer profecional <br>2019-2020</li> <hr>
              <LI>Cines S.A.: limpieza industrial <br>2013-2019</LI> <hr>
-             <li>Dinucci: montajes electrico <br>2012-2013</li> <hr>
+             <li>Dinucci: montajes electrico <br>2012-2013</li> <hr>-->
            </ul>
            <h5 class="mt-2">
               </h5>
