@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Porcentaje } from '../model/porcentaje';
 import { PorcentajeService } from '../servicios/porcentaje.service';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-porcentaje',
@@ -9,33 +10,28 @@ import { PorcentajeService } from '../servicios/porcentaje.service';
 })
 
 export class PorcentajeComponent implements OnInit {
+  isLogged:boolean=false;
   porcentajes:Porcentaje[]=[];
  progresos: any;
  
   
-  constructor(private sPorcentaje: PorcentajeService) { 
+  constructor(private tokenService:TokenService,  private sPorcentaje: PorcentajeService) { 
     
   }
 
   ngOnInit(): void {
     this.cargarPorcentaje();
-
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
    }
     cargarPorcentaje():void{
       this.sPorcentaje.list().subscribe(data => {this.porcentajes=data});
     }
 
-    delete(id:number){
-      if(id !=undefined){
-        this.sPorcentaje.delete(id).subscribe(
-          dat=>{
-            this.cargarPorcentaje();
-          },Error=>{alert("no se pudo eliminar")
-        }
-          
-        )
-      }
-    }
+   
 
     delet(id?:number){
       if(id!=undefined){

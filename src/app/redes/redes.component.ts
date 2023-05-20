@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Redes } from '../model/redes';
 import { RedesService } from '../servicios/redes.service';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-redes',
@@ -9,31 +10,42 @@ import { RedesService } from '../servicios/redes.service';
 })
 export class RedesComponent implements OnInit {
 redes:Redes[]=[];
-
-@Output() userLoginOn = new EventEmitter<boolean>();
-
-
+isLogged:boolean=false;
 //que sale
 
 
-  constructor(private sRedes: RedesService) { 
+  constructor(private sRedes: RedesService, private tokenService:TokenService, private tokenservicio:TokenService) { 
 
   }
 
   ngOnInit(): void {
     this.cargarRedes();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
     
   }
   cargarRedes():void{
     this.sRedes.list().subscribe(data => {this.redes=data});
   }
-  //modificate
-   // Paso 3: Crear la función que invoca al evento
-   iniciarSesion() {
-    // código para iniciar sesión
+  
+  onLogOUT():void{
+    this.tokenService.logOut();
+   window.location.reload();
+  }
 
-    // emitir el evento de éxito de inicio de sesión
-    this.userLoginOn.emit(true);
+  delete(id:number){
+    if(id !=undefined){
+      this.sRedes.delete(id).subscribe(
+        dat=>{
+          this.cargarRedes();
+        },Error=>{alert("no se pudo eliminar")
+      }
+        
+      )
+    }
   }
 
 }

@@ -3,7 +3,7 @@
  <section id="sobre-mi " class="trabajo">
   <div class="container text-fluit">
      <div class="row" >
-        <div class="col-3 ">
+        <div  class="col-3 ">
            <br> 
            <h3 ><em> Baez <br>ALBINO ></em></h3> <br><br>
            <div *ngFor="let experiencia of explaboral">
@@ -18,10 +18,14 @@
           
         <div class="col-3  p-5 ">
            <h3 class="">Experirncia laboral</h3>
+           <button *ngIf="isLogged" type="button" class="btn btn-light" routerLink="/newtrabaj" title="Agregar Experiencia Laboral"><i class="bi bi-plus"></i></button>
            <ul>
             <li *ngFor="let experiencia of explaboral"> 
               {{experiencia.nombreEmpresa}}:{{experiencia.puesto}} <br>
-              {{experiencia.inicio}}-{{experiencia.fin}}</li> <hr>
+              {{experiencia.inicio| date:"dd-MM-yyyy"}}-{{experiencia.fin| date:"dd-MM-yyyy"}} <br>
+              <button  *ngIf="isLogged" class="btn btn-danger" (click)="delete(experiencia.id)" title="Eliminar experiencia">
+                <i class="bi bi-trash3"></i>
+            </button></li> <hr>
 
             <!-- <li>Seraris: chofer profecional <br>2020-actualidad</li> <hr>
              <li>Polimont: chofer profecional <br>2019-2020</li> <hr>

@@ -28,10 +28,11 @@ import { PorcentajeComponent } from './porcenteje/porcenteje.component';
 import { IniciarSecionComponent } from './componentes/iniciar-secion/iniciar-secion.component';
 import { EdicionComponent } from './edicion/edicion.component';
 import { NewEducacionComponent } from './educacion/new-educacion/new-educacion.component';
-import { EditEducacionComponent } from './explaboral/edit-educacion/edit-educacion.component';
+import { EditEducacionComponent } from './explaboral/nuevespe/edit-educacion.component';
 import { Edit2educacionComponent } from './educacion/edit2educacion/edit2educacion.component';
 import { NewCarrucelComponent } from './carruzel/new-carrucel/new-carrucel.component';
 import { CrearPorcComponent } from './porcenteje/crear-porc/crear-porc.component';
+import { NewRedComponent } from './redes/new-red/new-red.component';
 
 
 
@@ -61,6 +62,7 @@ import { CrearPorcComponent } from './porcenteje/crear-porc/crear-porc.component
     Edit2educacionComponent,
     NewCarrucelComponent,
     CrearPorcComponent,
+    NewRedComponent,
   ],
   imports: [
     BrowserModule,

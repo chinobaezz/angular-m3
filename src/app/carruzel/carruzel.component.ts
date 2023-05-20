@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Carruzel } from '../model/carruzel';
 import { CarruzelService } from '../servicios/carruzel.service';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-carruzel',
@@ -10,10 +11,17 @@ import { CarruzelService } from '../servicios/carruzel.service';
 export class CarruzelComponent implements OnInit {
   id:number;
 carru:Carruzel[]=[];
-  constructor(private sCarruzel : CarruzelService) { }
+isLogged:boolean=false;
+  constructor(private sCarruzel : CarruzelService, private tokenService:TokenService) { }
 
   ngOnInit(): void {
     this.cargarCarruzel();
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
+    
   }
   cargarCarruzel():void{
     this.sCarruzel.list().subscribe(data => {this.carru=data});

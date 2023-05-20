@@ -1,0 +1,71 @@
+
+
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #57caf7;
+  border-radius: 50%;
+  animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 4s;
+}
+
+.snowflake:nth-child(2) {
+  left: 25%;
+  animation-duration: 5s;
+}
+
+.snowflake:nth-child(3) {
+  left: 40%;
+  animation-duration: 6s;
+}
+
+.snowflake:nth-child(4) {
+  left: 50%;
+  animation-duration: 7s;
+}
+
+.snowflake:nth-child(5) {
+  left: 60%;
+  animation-duration: 8s;
+}
+
+.snowflake:nth-child(7) {
+  left: 70%;
+  animation-duration: 9s;
+}
+.snowflake:nth-child(8) {
+  left: 80%;
+  animation-duration: 7,5s;
+}
+.snowflake:nth-child(9) {
+  left: 90%;
+  animation-duration: 1,5s;
+}
+
+
+
+
+/* Ajusta los valores de left y animation-duration según tus preferencias para cada copo de nieve */

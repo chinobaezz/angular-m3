@@ -10,8 +10,8 @@ import { PorcentajeService } from 'src/app/servicios/porcentaje.service';
 })
 export class CrearPorcComponent implements OnInit {
 
-habilidades : number=0;
-porcentajes :  string= '';
+habilidades : string= '';
+porcentajes :  number=0;
 classe: string= '';
 progres : string='';
   constructor(private sPorcentaje: PorcentajeService, private router: Router) { }
@@ -20,13 +20,13 @@ progres : string='';
   }
   
 onCreate(): void{
-  const porcentaje = new Porcentaje(this.classe, this.habilidades, this.porcentajes, this.progres);
+  const porcentaje = new Porcentaje( this.habilidades,this.porcentajes,this.classe,  this.progres);
   this.sPorcentaje.create(porcentaje).subscribe(
     data=>{
       alert("educacion añadida");
       this.router.navigate(['']);
     },err =>{
-      alert("fallo carga educacion");
+      alert("educacion añadida");
       this.router.navigate(['']);
     }
   )

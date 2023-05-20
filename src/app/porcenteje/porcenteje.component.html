@@ -8,8 +8,7 @@ para poner ngestylo o clas se ponen [estyle.with.%]="progreso.porcentajes"
 <div class="row">
   <h3 class="mt">porcentajes</h3>
 </div>
-<button type="button" class="btn btn-light" routerLink="/nuevporce">
-  Nuevo elemento</button>
+<button *ngIf="isLogged" type="button" class="btn btn-light" routerLink="/nuevporce" title="Agregar"><i class="bi bi-plus"></i></button>
 
 <ul>
   <li *ngFor="let porsentaje of porcentajes">
@@ -28,8 +27,8 @@ para poner ngestylo o clas se ponen [estyle.with.%]="progreso.porcentajes"
       
     </div>
     <div class="col-3">
-      <button   class="btn btn-danger" (click)="delet(porsentaje.id)">
-        <i class="bi bi-brush">borrar</i>
+      <button  *ngIf="isLogged" class="btn btn-danger" (click)="delet(porsentaje.id)">
+        <i class="bi bi-trash3" title="Eliminar"></i>
       </button>
     </div>
     </div>

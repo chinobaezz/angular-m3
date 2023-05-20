@@ -3,10 +3,18 @@
     <div>
       <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate #f="ngForm" name="educacionForm">
         <div class="form-group">
-          <label for="educacionTitulo" class="form-label">Agregar Titulo</label>
-                  <input type="text" class="form-control"  formControlName="titulo" >
+          <label for="educacionNombreEmpresa" class="form-label">Empresa</label>
+                  <input type="text" class="form-control"  formControlName="nombreEmpresa" >
           <!--<label for="educaciontitulo">Nombre del titulo</label>
           <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>-->
+        </div> 
+        <div class="form-group">
+          <label for="educacionPuesto" class="form-label">Puesto</label>
+                  <input type="text" class="form-control"  formControlName="Puesto" >
+        </div>
+        <div class="form-group">
+          <label for="educacionImagen" class="form-label">Logo de la Empresa</label>
+                  <input type="url" placeholder="URL de imagen" class="form-control"  formControlName="imagen" >
         </div>
         <div class="form-group">
           <label for="educacionPeriodoInicio" class="form-label">Agregar Periodo Inicio</label>
@@ -22,9 +30,10 @@
           <input type="date" class="form-control" id="fin" name="fin" [(ngModel)]="edu.fin" required>-->
         </div><br>
         <button class="btn btn-primary">
-          agregar educacion
+          Agregar nueva experiencia laboral
         </button>
       </form>
     </div>
   </div>
 </div>
+

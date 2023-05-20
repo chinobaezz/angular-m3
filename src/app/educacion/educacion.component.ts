@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Educacion } from '../model/educacion';
 import { EducacionService } from '../servicios/educacion.service';
+import { TokenService } from '../service/token.service';
 
 
 
@@ -13,13 +14,18 @@ import { EducacionService } from '../servicios/educacion.service';
 export class EducacionComponent implements OnInit {
 educaciones:Educacion[]=[];
 //aca se modifico
-isLogged = false;
+isLogged :boolean= false;
 
-  constructor(private sEducacion: EducacionService) { }
+  constructor(private sEducacion: EducacionService, private tokenservice:TokenService) { }
 
 
   ngOnInit(): void {
     this.cargarEducacion();
+    if(this.tokenservice.getToken()){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
 
@@ -40,9 +46,6 @@ delete(id?:number){
       alert("no se pudo borrar")
     })
   }
-}
-onUserLoginOn(userLoginOn: boolean) {
-  this.isLogged = userLoginOn;
 }
 
 

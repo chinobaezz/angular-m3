@@ -7,12 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExperienciaService {
-  url= 'http://localhost:8080/experiencia/'
+
+  url= 'http://localhost:8080/ecperiencia/'
 
   constructor(private httpClient:HttpClient) { }
 
 
-  public list():Observable<Experiencia[]>{
+  public lista():Observable<Experiencia[]>{
     return this.httpClient.get<Experiencia[]>(this.url+ 'lista');
   }
   
@@ -20,8 +21,8 @@ export class ExperienciaService {
     return this.httpClient.get<Experiencia>(this.url+ `ver/${id}`);
   }
 
-  public create(porcentaje: Experiencia):Observable<any>{
-    return this.httpClient.post<any>(this.url+ 'create', Experiencia);
+  public create(experiencia: Experiencia):Observable<any>{
+    return this.httpClient.post<any>(this.url+ 'create', experiencia);
   }
   
   public delete(id: number):Observable<any>{

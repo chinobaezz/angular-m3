@@ -22,7 +22,7 @@ onCreat(): void{
       alert("añadida");
       this.router.navigate(['']);
     },err =>{
-      alert("cargado");
+      alert("falla al cargar");
       this.router.navigate(['']);
     }
   )

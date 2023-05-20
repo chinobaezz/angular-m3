@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/model/educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
@@ -10,26 +11,50 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class NewEducacionComponent implements OnInit {
   //desde aca se modifico
+form:FormGroup;
 
   // hasta aca
-titulo: string = '';
-inicio: string= '';
-fin: string= '';
 
-  constructor(private sEducacion:EducacionService, private router: Router) { }
+  constructor(private sEducacion:EducacionService,
+    private formBuilder:FormBuilder,
+     private router: Router) { 
+      this.form=this.formBuilder.group({
+        //id!:[''],
+titulo:[''],
+inicio:[''],
+fin: [''],
+      })
+     }
 
   ngOnInit(): void {
   }
-onCreate(): void{
-  const educaciones = new Educacion(this.titulo, this.inicio, this.fin);
-  this.sEducacion.create(educaciones).subscribe(
-    data=>{
-      alert("educacion añadida");
-      this.router.navigate(['']);
-    },err =>{
-      alert("fallo carga educacion");
-      this.router.navigate(['']);
-    }
-  )
+
+
+  onCreate(): void{
+    this.sEducacion.create(this.form.value).subscribe(data=>{
+    alert("Estudio Añadido");
+    this.router.navigate(['']);
+  },err =>{
+    alert("fallo carga intente nuevamente");
+    this.router.navigate(['/newEduca']);
+  });
 }
+
+limpiar(): void{
+  this.form.reset();
+}
+
+onEnviar(event:Event){
+  event.preventDefault;
+  if (this.form.valid){
+    //metodos
+    this.onCreate();
+  }else{
+    alert("falló en la carga, intente nuevamente");
+    this.form.markAllAsTouched();
+  }
+}
+
+
+
 }

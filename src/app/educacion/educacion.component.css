@@ -3,3 +3,44 @@ section.educacion{
   margin-top: -0rem;
   height: 30%;
 }
+.educacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h3 {
+  animation: moveAnimation 2s ease-in-out infinite alternate, sizeAnimation 2s linear infinite;
+}
+
+@keyframes moveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes sizeAnimation {
+  0% {
+    font-size: 16px;
+  }
+  50% {
+    font-size: 20px;
+  }
+  100% {
+    font-size: 16px;
+  }
+}
+  @keyframes colorAnimation {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: green;
+  }
+}

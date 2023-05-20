@@ -6,9 +6,9 @@ import {  EventEmitter,  Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginRequest } from 'src/app/service/auth/loginRequest';
 import { LoginnService } from 'src/app/service/auth/loginn.service';
-
-const email = 'admin@gmail.com';
-const password = '12345678';
+import { LoginUsuario } from 'src/app/model/login-usuario';
+import { AuthService } from 'src/app/service/auth.service';
+import { TokenService } from 'src/app/service/token.service';
 
 @Component({
   selector: 'app-login',
@@ -16,53 +16,68 @@ const password = '12345678';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
-  form: FormGroup;
-  loginError: string;
-  userLoginOn: boolean = false;
-
-  constructor(private http: HttpClient) {}
+  form:FormGroup;
+  isLogged = false;
+  isLogginFail = false;
+  loginUsuario: LoginUsuario;
+  nombreUsuario: string;
+  password: string;
+  roles: string[] = [];
+  errMsj: string;
+  constructor(private formBuilder: FormBuilder, private tokenService: TokenService, private authService: AuthService, private router:Router) { 
+    //Creamos el grupo de controles para el formulario 
+    this.form= this.formBuilder.group({
+      nombreUsuario:['',[Validators.required]],      
+      password:['', [Validators.required]],
+      
+   })
+  }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    });
-  }
-  
-
-  get Mail() {
-    return this.form.get('email');
+    if(this.tokenService.getToken()){
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.roles = this.tokenService.getAuthorities();
+    }
   }
 
-  get Password() {
-    return this.form.get('password');
+  get Nombre(){
+    return this.form.get("nombreUsuario");
   }
 
-  get MailValid() {
-    return this.Mail.touched && !this.Mail.valid;
+  get Password(){
+    return this.form.get("password");
+  }
+
+  get NombreValid(){
+    return this.Nombre.touched && !this.Nombre.valid;
   }
 
   get PasswordValid() {
     return this.Password.touched && !this.Password.valid;
   }
 
-  onEnviar(event: { preventDefault: () => void; }) {
-    event.preventDefault();
 
-    if (this.form.valid) {
-      const formData = this.form.value;
-
-      if (formData.email === email && formData.password === password) {
-        this.userLoginOn = true;
-        this.loginError = '';
-      } else {
-        alert("no valido");
-        this.loginError = 'El email o la contraseña son incorrectos.';
-      }
-    }
+  onLogin(): void{
+    this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
+    this.authService.login(this.loginUsuario).subscribe(data =>{
+      this.isLogged = true;
+      this.isLogginFail = false;
+      this.tokenService.setToken(data.token);
+      this.tokenService.setUserName(data.nombreUsuario);
+      this.tokenService.setAuthorities(data.authorities);
+      this.roles = data.authorities;      
+      this.router.navigate(['']);
+    }, err => {
+      this.isLogged = false;
+      this.isLogginFail = true;
+      this.errMsj = err.error.mensaje;
+      console.log(this.errMsj);
+    })
   }
+
+  limpiar(): void{
+    this.form.reset();
+  }
+
 }
-  
-  
-  

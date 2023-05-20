@@ -1,7 +1,12 @@
 
 <ul class="list-group list-group-horizontal form-list">
-    <li class="list-group-item form-item" *ngFor="let redes of redes">
+    <button *ngIf="isLogged" type="button" class="btn btn-light" routerLink="/newRed" title="agregar red">
+      <i class="bi bi-plus"></i></button>
+        <li class="list-group-item form-item" *ngFor="let redes of redes">
       <a href= {{redes.nombreRed}} target="_blank"><i class={{redes.classe}}></i></a><br><br>
+      <button  *ngIf="isLogged" class="btn btn-danger" (click)="delete(redes.id)" title="Eliminar Red">
+          <i class="bi bi-trash3"></i>
+      </button>
     </li><!--
     <li class="list-group-item">
       <a href="https://www.linkedin.com/baez-albino" target="_blank"> <i class="fa-brands fa-linkedin fa-2xl"></i></a>
@@ -9,11 +14,11 @@
     <li class="list-group-item"><a href="https://www.twitter.com/baez-chino" target="_blank"><i class="fa-brands fa-twitter fa-2xl"></i></a>
     </li>
      Button trigger modal -->
-    <li class="list-group-item" *ngIf="userLoginOn">
-       <i  class="fa-solid fa-user-lock fa-2xl" type="button" data-bs-toggle="modal" routerLink="/login">
+    <li class="list-group-item" *ngIf="!isLogged">
+       <i  class="fa-solid fa-user-lock fa-2xl" type="button" data-bs-toggle="modal" routerLink="/login" title="Ingresar">
        </i>
-       <li class="list-group-item" *ngIf="!userLoginOn">
-        <i class="fa-solid fa-user fa-2xl" type="button" routerLink="/">
+       <li class="list-group-item" *ngIf="isLogged">
+        <i class="fa-solid fa-user fa-2xl" type="button" (click)="onLogOUT()" title="Cerrar cesion">
         </i>
       </li>
     
