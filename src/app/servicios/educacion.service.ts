@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EducacionService {
-url= 'http://localhost:8080/estudio/'
+url= 'https://portafoliocv.onrender.com/estudio/'
   constructor(private httpClient:HttpClient) { }
   
   public list():Observable<Educacion[]>{

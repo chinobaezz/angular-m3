@@ -8,7 +8,7 @@ import { Carruzel } from '../model/carruzel';
   providedIn: 'root'
 })
 export class CarruzelService {
-  url= 'http://localhost:8080/carruzel/'
+  url= 'https://portafoliocv.onrender.com/carruzel/'
 
   constructor(private httpClient:HttpClient) { }
 

@@ -29,7 +29,7 @@ fin: [''],
 
   onCreate(): void{
     this.sExplaboral.create(this.form.value).subscribe(data=>{
-    alert("Estudio Añadido");
+    alert("Experiencia Añadida");
     this.router.navigate(['']);
   },err =>{
     alert("carga completla");

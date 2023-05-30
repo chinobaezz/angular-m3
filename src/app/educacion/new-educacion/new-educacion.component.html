@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div>
-      <form [formGroup]="form" (ngSubmit)="onEnviar($event)" novalidate #f="ngForm" name="educacionForm">
+      <form [formGroup]="form" (ngSubmit)="onEnvia($event)" novalidate #f="ngForm" name="educacionForm">
         <div class="form-group">
           <label for="educacionTitulo" class="form-label">Agregar Titulo</label>
                   <input type="text" class="form-control"  formControlName="titulo" >

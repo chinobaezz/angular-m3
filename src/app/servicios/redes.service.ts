@@ -10,7 +10,7 @@ import { Redes } from '../model/redes';
 export class RedesService {
  // save(red: Redes) {
   //  throw new Error('Method not implemented.');}
-  url= 'http://localhost:8080/redes/'
+  url= 'https://portafoliocv.onrender.com/redes/'
 
   constructor(private httpClient:HttpClient) { }
 

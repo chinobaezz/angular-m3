@@ -7,7 +7,7 @@ import { Porcentaje } from '../model/porcentaje';
   providedIn: 'root'
 })
 export class PorcentajeService {
-  url= 'http://localhost:8080/habilidades/'
+  url= 'https://portafoliocv.onrender.com/habilidades/'
 
   constructor(private httpClient:HttpClient) { }
 

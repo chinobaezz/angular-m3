@@ -11,7 +11,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class NewEducacionComponent implements OnInit {
   //desde aca se modifico
-form:FormGroup;
+form:FormGroup
 
   // hasta aca
 
@@ -35,8 +35,8 @@ fin: [''],
     alert("Estudio Añadido");
     this.router.navigate(['']);
   },err =>{
-    alert("fallo carga intente nuevamente");
-    this.router.navigate(['/newEduca']);
+    alert("carga  nuevamente");
+    this.router.navigate(['']);
   });
 }
 
@@ -44,7 +44,7 @@ limpiar(): void{
   this.form.reset();
 }
 
-onEnviar(event:Event){
+onEnvia(event:Event){
   event.preventDefault;
   if (this.form.valid){
     //metodos

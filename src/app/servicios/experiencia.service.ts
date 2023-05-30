@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ExperienciaService {
 
-  url= 'http://localhost:8080/ecperiencia/'
+  url= 'https://portafoliocv.onrender.com/ecperiencia/'
 
   constructor(private httpClient:HttpClient) { }
 
